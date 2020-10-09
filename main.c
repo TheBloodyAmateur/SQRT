@@ -1,14 +1,16 @@
-/*Author: Botan Celik
-  Class: 5AHEL
-  Program: SQRT-program
-  Date: 30.09.2020
+/*
+    Author: Botan Celik
+    Class: 5AHEL
+    Program: SQRT-program
+    Date: 30.09.2020
+    Github rep.: https://github.com/TheBloodyAmateur/SQRT.git
 */
 #include <stdio.h>
 #include <stdlib.h>
 
 //functions
-int my_sqrt(int n);
-int multiplication(int n);
+int my_sqrt();
+int multiplication();
 
 int main()
 {
@@ -20,37 +22,37 @@ int main()
 
 int my_sqrt(int input)
 {
-    int square = 0;
-    int result;
-    int correct = -1;
+    int square_result = 0;
+    int loop_result;
+    int correct_result = -1;
 
-    for(result = 0; square <= input; result++)
+    for(loop_result = 0; square_result <= input; loop_result++)
     {
-        square = multiplication(result);
+        square_result = multiplication(loop_result);
 
-        if(square != input)
+        if(square_result != input)
         {
             /*
             As long as the number is not equal or bigger than the user input
             the loop continues.
             */
-            if(square <= input)
+            if(square_result <= input)
             {
                 continue;
             }
             else
             {
                 //If the result of the multiplication is bigger than the input the result is reduced by -1
-                for(int n = 0; n != result; n++)
+                for(int n = 0; n != loop_result; n++)
                 {
-                    correct++;
+                    correct_result++;
                 }
-                return correct;
+                return correct_result;
             }
         }
         else
         {
-            return result;
+            return loop_result;
         }
     }
 }
